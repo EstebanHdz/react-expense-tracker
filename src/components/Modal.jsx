@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import PropTypes from 'prop-types';
 
 const Modal = ({addTransaction}) => {
@@ -26,7 +26,7 @@ const Modal = ({addTransaction}) => {
 
         if(inputConceptValue === "" || inputAmountValue === "") 
             return null
-          
+
         addTransaction(inputConceptValue, inputAmountValue)
         setInputAmountValue("")
         setInputConceptValue("")

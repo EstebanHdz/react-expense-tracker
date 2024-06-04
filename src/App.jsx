@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import TransactionElement from './components/TransactionElement'
 import Modal from './components/Modal'
 import { v4 as uuidv4 } from 'uuid';
