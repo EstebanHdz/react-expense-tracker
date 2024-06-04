@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 
 const Modal = ({addTransaction}) => {
 
-
     const [inputConceptValue, setInputConceptValue] = useState("")
     const [inputAmountValue, setInputAmountValue] = useState("")
-
 
 
     const handleConceptInput = (event) => {
@@ -54,7 +52,6 @@ const Modal = ({addTransaction}) => {
                         <input onChange={(event) => handleAmountInput(event)} className='input-field' type="text" placeholder='Enter Amount' value={inputAmountValue}/>
                     </div>
 
-                    {/*<button className="action-button"  ref={modal_btn} onClick={openModal}>Cancel</button>*/}
                     <button className="action-button confirm-button" onClick={createTransaction}>Add</button>
                 </div>
             </div>

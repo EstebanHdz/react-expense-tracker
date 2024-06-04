@@ -26,13 +26,6 @@ function App() {
             id: uuidv4()
         }
 
-        /*
-        if(amount[0] === "-"){
-            newTransaction.type = "Expense"
-            amount = amount.substring(1)
-        }
-        */
-
         let am = Number(Number(amount).toFixed(2))
 
         if(am < 0){
@@ -65,12 +58,9 @@ function App() {
     }
 
     useEffect(() => {
-        //WHEN LOADED, LOAD DATA FROM LOCAL STORAGE
-
         const localTransactions = localStorage.getItem("transactions")
 
         if(localTransactions){
-            console.log(localTransactions);
             let trans = JSON.parse(localTransactions)
 
             let balance = 0
@@ -78,7 +68,6 @@ function App() {
             let expense = 0
 
             for(let transaction of trans){
-                console.log( transaction);
                 if(transaction.type === "Expense"){
                     balance -= transaction.amount
                     expense += transaction.amount
@@ -95,11 +84,6 @@ function App() {
             setTransactions(trans)
         }
     }, [])
-
-    useEffect(() => {
-        //const balance = transactions.reduce((total, current) => { return current.amount + total }, 0)
-        
-    }, [transactions])
 
     return (
         <div className='main'>
@@ -142,19 +126,15 @@ function App() {
                     </h2>
                     <div className="history-segment">
 
-
                         {
                             transactions.length <= 0 ? <p className='empty'>Empty... add some transactions!</p> : 
                             transactions.map(((transaction, index) => <TransactionElement transaction={transaction} key={index} removeTransaction={removeTransaction}/>))
                         }
                         
-                        
                     </div>
                 </section>
             </div>
-
         </div>
-            
   )
 }
 
